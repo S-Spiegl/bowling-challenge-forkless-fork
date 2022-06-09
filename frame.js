@@ -17,6 +17,10 @@ class Frame {
     return this.rolls[0] === 10
     //equivalent to return true if this.rolls[0] === 10
   }
+
+  spare() {
+    return sum(this.rolls) === 10 && this.rolls.length === 2
+  }
 }
 
 module.exports = Frame;

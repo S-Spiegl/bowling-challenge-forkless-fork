@@ -43,4 +43,18 @@ describe('Frame', () => {
       expect(frame.strike()).toBe(true);
     })
   })
+
+  describe('.spare', () => {
+    it('returns false if a spare has not been scored', () => {
+      frame.addRoll(5),
+      frame.addRoll(2);
+      expect(frame.spare()).toBe(false)
+    })
+
+    it('returns true if a spare has been scored', () => {
+      frame.addRoll(5),
+      frame.addRoll(5);
+      expect(frame.spare()).toBe(true)
+    })
+  })
 })
