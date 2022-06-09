@@ -12,6 +12,11 @@ class Frame {
   score() {
     return sum(this.rolls)
   }
+
+  strike() {
+    return this.rolls[0] === 10
+    //equivalent to return true if this.rolls[0] === 10
+  }
 }
 
 module.exports = Frame;

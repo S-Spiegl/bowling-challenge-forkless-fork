@@ -30,4 +30,17 @@ describe('Frame', () => {
       expect(frame.score()).toBe(8);
     })
   })
+
+  describe('.strike', () => {
+    it('returns false when strike has not been scored', () => {
+      frame.addRoll(8),
+      frame.addRoll(1);
+      expect(frame.strike()).toBe(false);
+    })
+
+    it('responds true when a strike has been scored', () => {
+      frame.addRoll(10)
+      expect(frame.strike()).toBe(true);
+    })
+  })
 })
